@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Singing Voice Conversion</title>
+</head>
+<body>
+<h1>Singing Voice Conversion</h1>
+<hr />
+
+<form th:action="@{/svc}" method="post" enctype="multipart/form-data">
+    <div th:if="${param.error}">
+        <div class="alert alert-danger">
+            이미 있는 아이디입니다. 다른 아이디를 입력해주세요.
+        </div>
+    </div>
+    아이디 : <input type="text" name="userId" /> <br />
+    이메일 : <input type="text" name="email" /> <br />
+    파일 : <input type="file" name="file" /> <br />
+    <button>등록</button><br /><br />
+    **파일은 아이디 입력 후 다운로드<br /><br />
+    <a href="/svc/search">변환된 파일 다운로드</a>
+</form>
+</body>
+</html>

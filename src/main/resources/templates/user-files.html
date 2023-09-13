@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Files</title>
+</head>
+<body>
+
+<h1>User Files</h1>
+
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Email</th>
+    <th>Original File Name</th>
+    <th>Created Date</th>
+    <th>Download Link</th>
+  </tr>
+
+  <tr th:each="file : ${userFiles}">
+    <td th:text="${file.userId}"></td>
+    <td th:text="${file.email}"></td>
+    <td th:text="${file.originalFileName}"></td>
+    <td th:text="${file.createdDate}"></td>
+    <td><a href="#" th:href="@{${file.filePath}}">Download</a></td>
+  </tr>
+</table><br /><br />
+
+<a href="/svc">처음 화면으로 돌아가기</a>
+
+</body >
+</html >
